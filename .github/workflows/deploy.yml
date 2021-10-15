@@ -27,7 +27,7 @@ jobs:
         gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
         gcloud config set run/region us-central1
       
-    # Deploy the Docker image to the GKE cluster
+    # #Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |
         gcloud run deploy ${{ secrets.GCP_APPLICATION }} --image gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }} \
